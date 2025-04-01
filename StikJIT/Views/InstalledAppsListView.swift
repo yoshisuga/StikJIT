@@ -116,10 +116,8 @@ struct AppButton: View {
     private func loadAppIcon(for bundleID: String) {
         AppStoreIconFetcher.getIcon(for: bundleID) { image in
             if let image = image {
-                DispatchQueue.main.async {
-                    withAnimation(.easeIn(duration: 0.2)) {
-                        self.appIcons[bundleID] = image
-                    }
+                withAnimation(.easeIn(duration: 0.2)) {
+                    self.appIcons[bundleID] = image
                 }
             }
         }
